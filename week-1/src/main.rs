@@ -6,6 +6,7 @@ struct Story {
     url: Option<String>,
     score: u32,
     by: String,
+    descendants: u64,
 }
 
 
@@ -29,7 +30,7 @@ fn api_request() -> Result<Story, Box<dyn std::error::Error>> {
         // .expect("failed to parse story");
     
         let link = story.url.as_deref().unwrap_or("(no URL)");
-        println!("{}. {} ({} points by {})", i+1, story.title, story.score, story.by);
+        println!("{}. {} ({} points by {}) ({} descendants)", i+1, story.title, story.score, story.by, story.descendants);
         println!("   {}\n", link);
         
         // Ok(story);
