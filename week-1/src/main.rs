@@ -41,7 +41,7 @@ fn api_request() -> Result<Vec<Story>, Box<dyn std::error::Error>> {
         
         stories.push(story);
     }
-    let _ = Err::<Vec<Story>, Box<dyn std::error::Error>>("beep boop no data found".into());
+    // let _ = Err::<Vec<Story>, Box<dyn std::error::Error>>("beep boop no data found".into());
     Ok(stories)
 }
 
@@ -56,7 +56,7 @@ fn main(){
             // println!("   {}\n", link);
         }
         Err(error) => {
-            println!("Error {:?}", error);
+            println!("beep boop Error {:?}", error);
         }
     }
 }
